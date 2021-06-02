@@ -1,0 +1,16 @@
+# Service - LoadBalancer
+# # pb-service -lb.yml
+apiVersion: v1
+kind: Service
+metadata:
+  name: ankitasthana-service
+  labels:
+    app: ankitasthana-app
+spec:
+  selector:
+    app: ankitasthana-app
+  type: LoadBalancer
+  ports:
+  - nodePort: 32750
+    port: 8080
+    targetPort: 8080
